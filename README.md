@@ -1,5 +1,6 @@
 # Socket-programming
 依序用python實做了TCP、TCP+UDP、Time-out、multiport、和p2p系統，並增設了GUI
+
 各branch功能:
 
 TCP:用TCP在本地傳送訊息，且實作當訊息長度過長時，系統如何將訊息適當拆解並重建且接收端能正確解讀。
