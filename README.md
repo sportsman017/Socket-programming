@@ -1,12 +1,57 @@
-# Socket-programming
-依序用python實做了TCP、TCP+UDP、Time-out、multiport、和p2p系統，並增設了GUI
+# Python Socket Programming
 
-各branch功能:
+A Python-based socket programming project that progressively implements
+TCP/UDP communication, timeout handling, multi-client support, and a
+peer-to-peer (P2P) communication system with a GUI.
 
-TCP:用TCP在本地傳送訊息，且實作當訊息長度過長時，系統如何將訊息適當拆解並重建且接收端能正確解讀。
+## Overview
 
-TCP+UDP:在本地可同時使用TCP和UDP兩種傳輸，且新增加密功能，訊息再傳輸前會先雜湊，接收方在解密。
+This project was developed through several stages, gradually extending
+the functionality of a basic socket communication system.
 
-Timeout and Multiport:新增Timeout功能防止長時間連線失敗大量占用網路，且可讓server一對多連線。
+The project focuses on:
+- TCP and UDP network communication
+- Message segmentation and reconstruction
+- Data encryption and integrity verification
+- Connection timeout handling
+- Multi-client server communication
+- Peer-to-peer communication
+- GUI-based operation
 
-p2p:整合前面功能的p2p系統。
+## Features
+
+### 1. TCP
+- Implemented local Client/Server communication using TCP.
+- Handles messages that exceed the transmission size by splitting them
+  into multiple segments.
+- Reconstructs the segmented message at the receiver side to ensure
+  the original message can be correctly interpreted.
+
+### 2. TCP + UDP
+- Supports both TCP and UDP communication.
+- Added data protection before transmission.
+- The sender processes the message before transmission, and the receiver
+  performs the corresponding processing to recover the original message.
+
+### 3. Timeout and Multiport
+- Added timeout handling to prevent failed connections from occupying
+  network resources for an extended period.
+- Supports multiple connections through multiple ports.
+- Allows the server to handle multiple clients simultaneously.
+
+### 4. P2P System
+- Integrates the functionality developed in previous stages.
+- Implements a peer-to-peer communication system.
+- Supports network communication with the previously developed
+  transmission and connection-handling mechanisms.
+- Added a GUI to provide a more convenient user interface.
+
+## Project Structure
+
+```text
+.
+├── TCP/
+├── TCP_UDP/
+├── Timeout_Multiport/
+├── P2P/
+└── README.md
